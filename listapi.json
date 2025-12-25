@@ -39,6 +39,15 @@
           }
         },
         {
+         "name": "INSTAGRAM DOWNLOADER",
+         "path": "/api/downloader/instagram?url=",
+         "desc": "Download video from instagram",
+         "status": "ready",
+         "params": {
+           "url": "Instagram Url"
+          }
+        },
+        {
           "name": "THREADS DOWNLOADER",
           "path": "/api/downloader/threads?url=",
           "desc": "Download media from threads",
