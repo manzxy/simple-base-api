@@ -36,11 +36,18 @@
         {
           "name": "JADVE AI CHAT",
           "path": "/api/ai/jadve?text=&model=",
-          "desc": "Chat AI via Jadve. Available models: gpt-5-mini, gpt-5-nano, gpt-4o-mini, claude, gemini, deepseek",
+          "desc": "Chat AI with selectable models (Jadve)",
           "status": "ready",
           "params": {
             "text": "Input text",
-            "model": "AI model (optional, default: gpt-5-nano)"
+            "model": [
+              "gpt-5-mini",
+              "gpt-5-nano",
+              "gpt-4o-mini",
+              "claude",
+              "gemini",
+              "deepseek"
+            ]
           }
         }
       ]
