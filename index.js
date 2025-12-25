@@ -6,7 +6,7 @@ const { GoogleGenAI } = require('@google/genai');
 const { fromBuffer } = require('file-type');
 const axios = require("axios");
 const FormData = require("form-data");
-const { chatJadve, MODELS } require('./lib/jadve.js')
+const { chatJadve, MODELS } = require('./lib/jadve.js')
 const { ciciAI } = require('./lib/cici.js')
 const { instagram } = require('./lib/instagram.js');
 const { youtube } = require('./lib/youtube.js');
