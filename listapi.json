@@ -116,6 +116,15 @@
           "params": {
             "url": "URL"
           }
+        },
+        {
+          "name": "LYRICS SEARCH",
+          "path": "/api/tools/lyrics?title=",
+          "desc": "Search song lyrics by title or artist",
+          "status": "ready",
+          "params": {
+            "title": "Song title or artist name"
+          }
         }
       ]
     }
