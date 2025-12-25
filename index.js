@@ -6,6 +6,7 @@ const { GoogleGenAI } = require('@google/genai');
 const { fromBuffer } = require('file-type');
 const axios = require("axios");
 const FormData = require("form-data");
+const { cici } = require('./lib/cici.js')
 const { instagram } = require('./lib/instagram.js');
 const { youtube } = require('./lib/youtube.js');
 const { ssweb } = require('./lib/ssweb.js');
@@ -69,6 +70,23 @@ const text = req.query.text;
     return res.status(500).json({ error: e.message });
   }
 });
+
+router.get("/ai/cici", async (req, res) => {
+  const text = req.query.text
+  if (!text)
+    return res.status(400).json({ error: "Missing 'text' parameter" })
+
+  try {
+    const result = await ciciAI(text)
+    return res.json(result)
+  } catch (e) {
+    return res.json({
+      success: false,
+      creator: "manzxy",
+      message: e.message
+    })
+  }
+})
 
 
 // DOWNLOADER ENDPOINT
