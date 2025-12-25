@@ -23,6 +23,15 @@
             "system": "System instruction",
             "apikey": "Your Gemini API key"
           }
+        },
+        {
+          "name": "CICI AI CHAT",
+          "path": "/api/ai/cici?text=",
+          "desc": "Chat with CICI AI",
+          "status": "ready",
+          "params": {
+            "text": "Input text"
+          }
         }
       ]
     },
@@ -101,4 +110,4 @@
       ]
     }
   ]
-}
+        }
