@@ -17,12 +17,12 @@ app.use(express.static(path.join(__dirname)));
 /*
 UNTUK SETTING NAMA WEB DLL
 */
-const title = "EH PI AY DOANG";
-const favicon = "https://raw.githubusercontent.com/upload-file-lab/fileupload7/main/uploads/1764494355026.jpeg?format=png&name=900x900";
-const logo = "https://raw.githubusercontent.com/upload-file-lab/fileupload7/main/uploads/1764494355026.jpeg";
-const headertitle = "REST EH PI AY";
-const headerdescription = "Kumpulan API Endpoint yang mungkin berguna.";
-const footer = "© 2025 IYAYN AJAH";
+const title = "Manzxy Apis";
+const favicon = "https://raw.githubusercontent.com/belluptaka/dat3/main/uploads/27e48a-1766660528291.jpg";
+const logo = "https://raw.githubusercontent.com/belluptaka/dat3/main/uploads/27e48a-1766660528291.jpg";
+const headertitle = "Manzxy Apis";
+const headerdescription = "Gaguna Njir";
+const footer = "© 2025 Manzxy";
 
 /*
 Nah yang di bawah ini fiturnyah
