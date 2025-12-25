@@ -39,12 +39,12 @@
           }
         },
         {
-         "name": "INSTAGRAM DOWNLOADER",
-         "path": "/api/downloader/instagram?url=",
-         "desc": "Download video from instagram",
-         "status": "ready",
-         "params": {
-           "url": "Instagram Url"
+          "name": "INSTAGRAM DOWNLOADER",
+          "path": "/api/downloader/instagram?url=",
+          "desc": "Download video from instagram",
+          "status": "ready",
+          "params": {
+            "url": "Instagram Url"
           }
         },
         {
@@ -54,6 +54,25 @@
           "status": "ready",
           "params": {
             "url": "Threads URL"
+          }
+        },
+        {
+          "name": "YOUTUBE MP3 DOWNLOADER",
+          "path": "/api/downloader/ytmp3?url=",
+          "desc": "Download audio from YouTube (MP3)",
+          "status": "ready",
+          "params": {
+            "url": "YouTube URL"
+          }
+        },
+        {
+          "name": "YOUTUBE MP4 DOWNLOADER",
+          "path": "/api/downloader/ytmp4?url=&quality=",
+          "desc": "Download video from YouTube with selectable resolution",
+          "status": "ready",
+          "params": {
+            "url": "YouTube URL",
+            "quality": "Video resolution (4k, 1440, 1080, 720, 480, 320, 240, 144)"
           }
         }
       ]
