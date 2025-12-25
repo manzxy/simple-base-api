@@ -7,6 +7,7 @@ const { fromBuffer } = require('file-type');
 const axios = require("axios");
 const FormData = require("form-data");
 const { instagram } = require('./lib/instagram.js');
+const { youtube } = require('./lib/youtube.js'};
 const { ssweb } = require('./lib/ssweb.js');
 const { threads } = require('./lib/threads.js');
 
@@ -108,6 +109,42 @@ router.get("/downloader/instagram", async (req, res) => {
     return res.status(500).json({ error: e.message })
   }
 });
+
+router.get("/downloader/ytmp3", async (req, res) => {
+  const url = req.query.url
+  if (!url)
+    return res.status(400).json({ error: "Missing 'url' parameter" })
+
+  try {
+    const result = await youtube(url, "mp3")
+    return res.json(result)
+  } catch (e) {
+    return res.json({
+      success: false,
+      platform: "youtube",
+      message: e.message
+    })
+  }
+})
+
+router.get("/downloader/ytmp4", async (req, res) => {
+  const url = req.query.url
+  const quality = req.query.quality || "720"
+
+  if (!url)
+    return res.status(400).json({ error: "Missing 'url' parameter" })
+
+  try {
+    const result = await youtube(url, quality)
+    return res.json(result)
+  } catch (e) {
+    return res.json({
+      success: false,
+      platform: "youtube",
+      message: e.message
+    })
+  }
+})
 
 
 // TOOLS ENDPOINT 
