@@ -6,6 +6,7 @@ const { GoogleGenAI } = require('@google/genai');
 const { fromBuffer } = require('file-type');
 const axios = require("axios");
 const FormData = require("form-data");
+const { venice } = require('./lib/venice.js')
 const { lyrics } = require('./lib/lyrics.js')
 const { chatJadve, MODELS } = require('./lib/jadve.js')
 const { ciciAI } = require('./lib/cici.js')
@@ -85,6 +86,26 @@ router.get("/ai/cici", async (req, res) => {
     return res.json({
       success: false,
       creator: "manzxy",
+      message: e.message
+    })
+  }
+})
+
+router.get("/ai/venice", async (req, res) => {
+  const prompt = req.query.text
+  const model = req.query.model || "dolphin-3.0-mistral-24b"
+
+  if (!prompt)
+    return res
+      .status(400)
+      .json({ error: "Missing 'text' parameter" })
+
+  try {
+    const result = await venice(prompt, model)
+    return res.json(result)
+  } catch (e) {
+    return res.json({
+      success: false,
       message: e.message
     })
   }
