@@ -6,6 +6,7 @@ const { GoogleGenAI } = require('@google/genai');
 const { fromBuffer } = require('file-type');
 const axios = require("axios");
 const FormData = require("form-data");
+const { lyrics } = require('./lib/lyrics.js')
 const { chatJadve, MODELS } = require('./lib/jadve.js')
 const { ciciAI } = require('./lib/cici.js')
 const { instagram } = require('./lib/instagram.js');
@@ -219,6 +220,26 @@ res.end(buffernya);
     return res.status(500).json({ error: e.message });
   }
 });
+
+router.get("/tools/lyrics", async (req, res) => {
+  const title = req.query.title
+
+  if (!title)
+    return res
+      .status(400)
+      .json({ error: "Missing 'title' parameter" })
+
+  try {
+    const result = await lyrics(title)
+    return res.json(result)
+  } catch (e) {
+    return res.json({
+      success: false,
+      creator: "manzxy",
+      message: e.message
+    })
+  }
+})
 
 app.use('/api', router);
 
