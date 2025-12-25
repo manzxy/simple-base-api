@@ -93,7 +93,6 @@ router.get("/ai/cici", async (req, res) => {
 
 router.get("/ai/venice", async (req, res) => {
   const prompt = req.query.text
-  const model = req.query.model || "dolphin-3.0-mistral-24b"
 
   if (!prompt)
     return res
