@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { JSDOM } = require('jsdom');
-const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const { GoogleGenAI } = require('@google/genai');
 const { fromBuffer } = require('file-type');
 const axios = require("axios");
