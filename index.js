@@ -6,6 +6,7 @@ const { GoogleGenAI } = require('@google/genai');
 const { fromBuffer } = require('file-type');
 const axios = require("axios");
 const FormData = require("form-data");
+const { instagram } = require('./lib/instagram.js');
 const { ssweb } = require('./lib/ssweb.js');
 const { threads } = require('./lib/threads.js');
 
@@ -92,6 +93,19 @@ const anu = await threads(url)
 return res.json(anu);
   } catch (e) {
     return res.status(500).json({ error: e.message });
+  }
+});
+
+router.get("/downloader/instagram", async (req, res) => {
+  const url = req.query.url
+  if (!url)
+    return res.status(400).json({ error: "Missing 'url' parameter" })
+
+  try {
+    const anu = await instagram(url)
+    return res.json(anu)
+  } catch (e) {
+    return res.status(500).json({ error: e.message })
   }
 });
 
