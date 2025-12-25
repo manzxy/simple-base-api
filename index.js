@@ -100,7 +100,7 @@ router.get("/ai/venice", async (req, res) => {
       .json({ error: "Missing 'text' parameter" })
 
   try {
-    const result = await venice(prompt, model)
+    const result = await venice(prompt)
     return res.json(result)
   } catch (e) {
     return res.json({
