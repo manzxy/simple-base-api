@@ -36,11 +36,10 @@
         {
           "name": "VENICE AI CHAT",
           "path": "/api/ai/venice?text=&model=",
-          "desc": "Chat with Venice AI (uncensored). Default model: dolphin-3.0-mistral-24b",
+          "desc": "Chat with Venice AI (uncensored)",
           "status": "ready",
           "params": {
-            "text": "Input text / prompt",
-            "model": "Optional model id"
+            "text": "Input text / prompt"
           }
         },
         {
