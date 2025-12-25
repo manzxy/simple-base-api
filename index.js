@@ -7,7 +7,7 @@ const { fromBuffer } = require('file-type');
 const axios = require("axios");
 const FormData = require("form-data");
 const { instagram } = require('./lib/instagram.js');
-const { youtube } = require('./lib/youtube.js'};
+const { youtube } = require('./lib/youtube.js');
 const { ssweb } = require('./lib/ssweb.js');
 const { threads } = require('./lib/threads.js');
 
